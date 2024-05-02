@@ -18,6 +18,15 @@ module.exports = {
     },
     extend: {
       colors: {
+        "fino-green-100": "#2AAE7E",
+        "fino-green-90": "#2EBD89",
+        "fino-green-80": "#BFFFE8",
+        "fino-green-70": "#00FFAA",
+        "fino-purple": "#C331E0",
+        "fino-yellow": "#EDBA28",
+        "fino-orange": "#F7562A",
+        "fino-blue": "#4EC8F5",
+        "fino-grey": "#BCBCBC",
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
