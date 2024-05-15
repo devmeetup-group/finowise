@@ -1,13 +1,13 @@
- import { Button } from './components/ui/button';
+import { FC } from 'react';
 import './api/api';
 import Header from './components/Header';
 
-function App() {
+const App: FC = () => {
   return (
     <main>
       <Header />
     </main>
   );
-}
+};
 
 export default App;
