@@ -13,7 +13,7 @@ const Header = () => {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
 
   return (
-    <header className="flex items-center justify-between p-6 lg:px-[120px] lg:py-10">
+    <header className="2xl:px-[120px] flex items-center justify-between p-6 lg:py-10">
       {/*-------- LOGO -------- */}
       <Logo />
       {/* -------- NAV -------- */}
@@ -26,7 +26,7 @@ const Header = () => {
             transition={{ duration: 0.6 }}
             className={`absolute left-0 z-10 w-screen translate-x-0 lg:relative lg:h-12 lg:w-fit`}
           >
-            <NavVanilla setShowNav={setShowNav}/>
+            <NavVanilla setShowNav={setShowNav} />
           </motion.div>
         )}
       </AnimatePresence>
@@ -56,7 +56,7 @@ const Header = () => {
         className="cursor-pointer lg:hidden"
         onClick={() => setShowNav((prevState) => !prevState)}
       >
-        <img src={hamburger} alt="" className="w-8" />
+        <img src={hamburger} alt="" className="w-6" />
       </div>
     </header>
   );

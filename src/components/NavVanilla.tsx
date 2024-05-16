@@ -120,7 +120,7 @@ const NavVanilla: FC<NavProps> = ({ setShowNav }) => {
   // ----- FOR DESKTOP HOVER --------------------------------
 
   return (
-    <div className="text-md absolute left-1/2 top-28 w-[calc(100vw-48px)] -translate-x-1/2  rounded-2xl bg-white py-10 font-Urbanist font-semibold lg:relative lg:left-0 lg:top-0 lg:w-fit lg:-translate-x-0 lg:rounded-none lg:py-0">
+    <div className="text-base absolute left-1/2 top-28 w-[calc(100vw-48px)] -translate-x-1/2  rounded-2xl bg-white py-10 font-Urbanist font-semibold lg:relative lg:left-0 lg:top-0 lg:w-fit lg:-translate-x-0 lg:rounded-none lg:py-0">
       {/*------------- NAV LIST -------------*/}
       <div className="lg:flex">
         {navItems.map((item) => (
