@@ -5,7 +5,7 @@ import { ChevronDown } from 'lucide-react';
 import homeIcon from '../assets/icons/home.svg';
 import dashboardIcon from '../assets/icons/dashboard.svg';
 import visionaryTeamIcon from '../assets/icons/visionary-team.svg';
-import aboutIcon from '../assets/icons/group.svg';
+import aboutIcon from '../assets/icons/Group.svg';
 import finowiseCardIcon from '../assets/icons/finowise-card.svg';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
@@ -107,6 +107,7 @@ const NavVanilla: FC<NavProps> = ({ setShowNav }) => {
         return { ...navItem, isOpen: false };
       }
     });
+    console.log(newNavItemsArray);
     setNavItems(newNavItemsArray);
   };
   // ----- FOR DESKTOP HOVER --------------------------------
