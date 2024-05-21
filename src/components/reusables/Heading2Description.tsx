@@ -1,4 +1,4 @@
-import { Heading2DescriptionProps } from '@/types';
+import { Heading2DescriptionProps } from '@/types/landing_and_heading_types';
 import { cn } from '@/lib/utils';
 
 const Heading2Description = ({ className, text }: Heading2DescriptionProps) => {

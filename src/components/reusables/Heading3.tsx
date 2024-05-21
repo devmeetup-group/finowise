@@ -1,4 +1,4 @@
-import { Heading3Props } from '@/types';
+import { Heading3Props } from '@/types/landing_and_heading_types';
 import { cn } from '@/lib/utils';
 
 const Heading3 = ({
