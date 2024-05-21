@@ -1,15 +1,20 @@
-import { FC } from 'react';
 import './api/api';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import MainLayout from './layouts/MainLayout';
+import Landing from './pages/Landing';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-const App: FC = () => {
-  return (
-    <main>
-      <Header />
-      <Footer/>
-    </main>
-  );
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <MainLayout />,
+    children: [
+      { path: '/', element: <Landing /> }
+    ],
+  },
+]);
+
+const App = () => {
+return <RouterProvider router={router} />;
 };
 
 export default App;

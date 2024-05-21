@@ -1,19 +1,37 @@
-import hamburger from '../assets/icons/hamburger.svg';
-import { Button } from './ui/button';
-import Logo from './Logo';
+import hamburger from '../../assets/icons/hamburger.svg';
+import { Button } from '../ui/button';
+import Logo from '../Logo';
 // import Nav from './Nav';
-import NavVanilla from './NavVanilla';
+import Navigation from '../Navigation';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
   const isDesktop = useMediaQuery({ minWidth: 1024 });
+  const { scrollY } = useScroll();
+  const [isScrolledDown, setIsScrolledDown] = useState(false);
+
+ useMotionValueEvent(scrollY, 'change', (latest) => {
+  const previous = scrollY.getPrevious()
+  if(previous && latest > previous) { 
+    setIsScrolledDown(true)
+    }
+ else {
+  setIsScrolledDown(false)
+ }
+ })
+
 
   return (
-    <header className="flex items-center justify-between p-6 lg:px-[120px] lg:py-10">
+    <motion.header
+      className="fixed left-0 w-screen z-10 flex h-[106px] items-center justify-between bg-white p-6 md:px-12 lg:h-[154px] lg:py-10 xl:px-[120px]"
+      initial={{ y: '-100%' }}
+      animate={{ y: isScrolledDown ? '-100%' : 0 }}
+      transition={{ duration: 0.5, stiffness: 200, dampness: 50 }}
+    >
       {/*-------- LOGO -------- */}
       <Logo />
       {/* -------- NAV -------- */}
@@ -26,7 +44,7 @@ const Header = () => {
             transition={{ duration: 0.6 }}
             className={`absolute left-0 z-10 w-screen translate-x-0 lg:relative lg:h-12 lg:w-fit`}
           >
-            <NavVanilla setShowNav={setShowNav}/>
+            <Navigation setShowNav={setShowNav} />
           </motion.div>
         )}
       </AnimatePresence>
@@ -39,7 +57,7 @@ const Header = () => {
             animate={showNav ? { opacity: 1 } : { opacity: 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className=" fixed left-0 top-0 h-screen w-screen bg-fino-green-100/25"
+            className=" fixed left-0 top-0 h-screen w-screen bg-fino-green-100/25 backdrop-blur-sm"
             onClick={() => setShowNav(false)}
           ></motion.div>
         )}
@@ -56,9 +74,9 @@ const Header = () => {
         className="cursor-pointer lg:hidden"
         onClick={() => setShowNav((prevState) => !prevState)}
       >
-        <img src={hamburger} alt="" className="w-8" />
+        <img src={hamburger} alt="" className="w-6" />
       </div>
-    </header>
+    </motion.header>
   );
 };
 

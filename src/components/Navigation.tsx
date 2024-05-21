@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 import { ChevronDown } from 'lucide-react';
@@ -6,11 +6,13 @@ import homeIcon from '../assets/icons/home.svg';
 import dashboardIcon from '../assets/icons/dashboard.svg';
 import visionaryTeamIcon from '../assets/icons/visionary-team.svg';
 import aboutIcon from '../assets/icons/Group.svg';
+import mobileIcon from '../assets/icons/mobile.svg'
 import finowiseCardIcon from '../assets/icons/finowise-card.svg';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
+import { NavProps } from '@/types';
 
-const defaultnavItems: NavItems[] = [
+const defaultnavItems = [
   {
     title: 'Personal',
     isOpen: false,
@@ -43,7 +45,7 @@ const defaultnavItems: NavItems[] = [
       {
         title: 'Mobile web version',
         link: '/',
-        icon: finowiseCardIcon,
+        icon: mobileIcon,
         iconBgColor: 'bg-fino-orange',
       },
     ],
@@ -68,24 +70,7 @@ const defaultnavItems: NavItems[] = [
   },
 ];
 
-type NavChildren = {
-  title: string;
-  link: string;
-  icon: string;
-  iconBgColor: string;
-};
-
-type NavItems = {
-  title: string;
-  isOpen: boolean;
-  children?: NavChildren[];
-};
-
-type NavProps = {
-  setShowNav: (show: boolean) => void;
-};
-
-const NavVanilla: FC<NavProps> = ({ setShowNav }) => {
+const Navigation = ({ setShowNav }: NavProps) => {
   const [navItems, setNavItems] = useState(defaultnavItems);
   const isDesktop = useMediaQuery({ minWidth: 1024 });
 
@@ -121,7 +106,7 @@ const NavVanilla: FC<NavProps> = ({ setShowNav }) => {
   // ----- FOR DESKTOP HOVER --------------------------------
 
   return (
-    <div className="text-md absolute left-1/2 top-28 w-[calc(100vw-48px)] -translate-x-1/2  rounded-2xl bg-white py-10 font-Urbanist font-semibold lg:relative lg:left-0 lg:top-0 lg:w-fit lg:-translate-x-0 lg:rounded-none lg:py-0">
+    <div className="absolute left-1/2 top-28 w-[calc(100vw-48px)] -translate-x-1/2 rounded-2xl bg-white py-10 font-Urbanist text-base font-semibold lg:relative lg:left-0 lg:top-0 lg:w-fit lg:-translate-x-0 lg:rounded-none lg:py-0">
       {/*------------- NAV LIST -------------*/}
       <div className="lg:flex">
         {navItems.map((item) => (
@@ -158,7 +143,7 @@ const NavVanilla: FC<NavProps> = ({ setShowNav }) => {
               {' '}
               {item.isOpen && (
                 <motion.div
-                  className={`overflow-hidden lg:absolute lg:top-14 lg:rounded-md lg:border lg:border-fino-blue-100/10 lg:shadow-xl lg:shadow-fino-blue-100/25`}
+                  className={`overflow-hidden bg-white lg:absolute lg:top-14 lg:rounded-md lg:border lg:border-fino-blue-100/10 lg:shadow-xl lg:shadow-fino-blue-100/25`}
                   variants={
                     isDesktop ? desktopChildrenVariants : mobileChildrenVariants
                   }
@@ -178,7 +163,11 @@ const NavVanilla: FC<NavProps> = ({ setShowNav }) => {
                         <div
                           className={`${child.iconBgColor} grid h-8 w-8 place-content-center rounded-full`}
                         >
-                          <img src={child.icon} alt="" className="w-4" />
+                          <img
+                            src={child.icon}
+                            alt=""
+                            className={`${child.icon === mobileIcon ? 'w-2.5' : 'w-4'}`}
+                          />
                         </div>
                         <Link to={child.link} className="text-nowrap">
                           {child.title}
@@ -194,10 +183,10 @@ const NavVanilla: FC<NavProps> = ({ setShowNav }) => {
       </div>
       {/* CALL TO ACTIONS */}
       <div className="mt-14 flex space-x-6 px-6 lg:hidden">
-        <Button variant="outline" size="tall">
+        <Button variant="outline" size="default">
           <Link to="/">Log in</Link>
         </Button>
-        <Button variant="default" size="tall">
+        <Button variant="default" size="default">
           <Link to="/">Create account</Link>
         </Button>
       </div>
@@ -205,4 +194,4 @@ const NavVanilla: FC<NavProps> = ({ setShowNav }) => {
   );
 };
 
-export default NavVanilla;
+export default Navigation;
