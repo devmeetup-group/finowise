@@ -1,4 +1,4 @@
-import { SubscriptionProps } from '@/types';
+import { SubscriptionProps } from '@/types/landing_and_heading_types';
 import { Button } from '../ui/button';
 import { cn } from '@/lib/utils';
 

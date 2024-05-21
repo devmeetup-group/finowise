@@ -6,11 +6,11 @@ import homeIcon from '../assets/icons/home.svg';
 import dashboardIcon from '../assets/icons/dashboard.svg';
 import visionaryTeamIcon from '../assets/icons/visionary-team.svg';
 import aboutIcon from '../assets/icons/Group.svg';
-import mobileIcon from '../assets/icons/mobile.svg'
+import mobileIcon from '../assets/icons/mobile.svg';
 import finowiseCardIcon from '../assets/icons/finowise-card.svg';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
-import { NavProps } from '@/types';
+import { NavProps } from '@/types/landing_and_heading_types';
 
 const defaultnavItems = [
   {

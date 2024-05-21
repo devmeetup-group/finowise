@@ -1,4 +1,4 @@
-import { Heading2Props } from '@/types';
+import { Heading2Props } from '@/types/landing_and_heading_types';
 import { cn } from '@/lib/utils';
 
 const Heading2 = ({ className, heading }: Heading2Props) => {
