@@ -10,6 +10,7 @@ export type Heading3Props = {
   variant?: 'small' | 'default';
 };
 
+
 export type Heading2DescriptionProps = {
   className?: string;
   text: string;
