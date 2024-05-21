@@ -1,15 +1,14 @@
-import { FC } from 'react';
 import Subscription from './Subscription';
 import Clients from './Clients';
 import HeroImage from './HeroImage';
 import HeroText from './HeroText';
 import Partners from './Partners';
 
-const LandingHero: FC = () => {
+const LandingHero = () => {
   return (
-    <div className="">
+    <section className="lg:pb-0">
       <div className="items-center justify-between lg:flex">
-        <div className="flex flex-col space-y-12 px-6 lg:w-1/2 lg:space-y-16 lg:pr-0 xl:pl-[120px]">
+        <div className="flex flex-col space-y-12 px-6 md:pl-12 lg:w-1/2 lg:space-y-16 lg:pr-0 xl:space-y-24  xl:pl-[120px]">
           <HeroText />
           <Subscription />
           <Clients />
@@ -19,7 +18,7 @@ const LandingHero: FC = () => {
         </div>
       </div>
       <Partners />
-    </div>
+    </section>
   );
 };
 

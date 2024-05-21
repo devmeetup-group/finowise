@@ -1,16 +1,18 @@
-import { FC } from 'react';
 import './api/api';
-import Header from './components/Header';
+import MainLayout from './layouts/MainLayout';
 import Landing from './pages/Landing';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-const App: FC = () => {
-  return (
-    <main>
-      <Header />
-      {/* NO ROUTING YET JUST BUILDING THE PAGES */}
-      <Landing />
-    </main>
-  );
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <MainLayout />,
+    children: [{ path: '/', element: <Landing /> }],
+  },
+]);
+
+const App = () => {
+return <RouterProvider router={router} />;
 };
 
 export default App;

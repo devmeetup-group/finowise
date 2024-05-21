@@ -1,10 +1,9 @@
-import { FC } from 'react';
 import one from '../../assets/images/client_images/1.png';
 import two from '../../assets/images/client_images/2.png';
 import three from '../../assets/images/client_images/3.png';
 import four from '../../assets/images/client_images/4.png';
 
-const Clients: FC = () => {
+const Clients = () => {
   const clients = [
     { img: one, translate: 'translate-x-[15px]' },
     { img: two, translate: 'translate-x-[55px]' },
