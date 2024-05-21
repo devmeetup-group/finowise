@@ -1,16 +1,18 @@
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 import { ChevronDown } from 'lucide-react';
 import homeIcon from '../assets/icons/home.svg';
 import dashboardIcon from '../assets/icons/dashboard.svg';
 import visionaryTeamIcon from '../assets/icons/visionary-team.svg';
-import aboutIcon from '../assets/icons/group.svg';
+import aboutIcon from '../assets/icons/Group.svg';
+import mobileIcon from '../assets/icons/mobile.svg'
 import finowiseCardIcon from '../assets/icons/finowise-card.svg';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
+import { NavProps } from '@/types';
 
-const defaultnavItems: NavItems[] = [
+const defaultnavItems = [
   {
     title: 'Personal',
     isOpen: false,
@@ -43,7 +45,7 @@ const defaultnavItems: NavItems[] = [
       {
         title: 'Mobile web version',
         link: '/',
-        icon: finowiseCardIcon,
+        icon: mobileIcon,
         iconBgColor: 'bg-fino-orange',
       },
     ],
@@ -68,24 +70,7 @@ const defaultnavItems: NavItems[] = [
   },
 ];
 
-type NavChildren = {
-  title: string;
-  link: string;
-  icon: string;
-  iconBgColor: string;
-};
-
-type NavItems = {
-  title: string;
-  isOpen: boolean;
-  children?: NavChildren[];
-};
-
-type NavProps = {
-  setShowNav: (show: boolean) => void;
-};
-
-const NavVanilla: FC<NavProps> = ({ setShowNav }) => {
+const Navigation = ({ setShowNav }: NavProps) => {
   const [navItems, setNavItems] = useState(defaultnavItems);
   const isDesktop = useMediaQuery({ minWidth: 1024 });
 
@@ -177,7 +162,11 @@ const NavVanilla: FC<NavProps> = ({ setShowNav }) => {
                         <div
                           className={`${child.iconBgColor} grid h-8 w-8 place-content-center rounded-full`}
                         >
-                          <img src={child.icon} alt="" className="w-4" />
+                          <img
+                            src={child.icon}
+                            alt=""
+                            className={`${child.icon === mobileIcon ? 'w-2.5' : 'w-4'}`}
+                          />
                         </div>
                         <Link to={child.link} className="text-nowrap">
                           {child.title}
@@ -204,4 +193,4 @@ const NavVanilla: FC<NavProps> = ({ setShowNav }) => {
   );
 };
 
-export default NavVanilla;
+export default Navigation;

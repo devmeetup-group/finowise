@@ -19,3 +19,7 @@ export type Heading2Props = {
   className?: string;
   heading: string;
 };
+
+export type NavProps = {
+  setShowNav: (show: boolean) => void;
+};

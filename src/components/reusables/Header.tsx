@@ -2,7 +2,7 @@ import hamburger from '../../assets/icons/hamburger.svg';
 import { Button } from '../ui/button';
 import Logo from '../Logo';
 // import Nav from './Nav';
-import Nav from '../Nav';
+import Navigation from '../Navigation';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AnimatePresence, motion, useScroll, useMotionValueEvent } from 'framer-motion';
@@ -44,7 +44,7 @@ const Header = () => {
             transition={{ duration: 0.6 }}
             className={`absolute left-0 z-10 w-screen translate-x-0 lg:relative lg:h-12 lg:w-fit`}
           >
-            <Nav setShowNav={setShowNav} />
+            <Navigation setShowNav={setShowNav} />
           </motion.div>
         )}
       </AnimatePresence>
