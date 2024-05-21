@@ -92,6 +92,7 @@ const Navigation = ({ setShowNav }: NavProps) => {
         return { ...navItem, isOpen: false };
       }
     });
+    console.log(newNavItemsArray);
     setNavItems(newNavItemsArray);
   };
   // ----- FOR DESKTOP HOVER --------------------------------
