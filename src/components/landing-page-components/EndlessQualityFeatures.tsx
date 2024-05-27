@@ -46,7 +46,10 @@ const EndlessQualityFeatures = () => {
           heading="Endless quality features Finowise offers"
           className="text-center"
         />
-        <Heading2Description text="Finowise offers seamless, smooth transactions and financial security" />
+        <Heading2Description
+          text="Finowise offers seamless, smooth transactions and financial security"
+          className=""
+        />
       </div>
       <div className="flex flex-col space-y-4 lg:grid lg:grid-cols-2 lg:flex-row lg:gap-6 lg:space-y-0">
         {data.map((data) => (
@@ -66,8 +69,8 @@ const EndlessQualityFeatures = () => {
             </div>
 
             <div className="flex flex-col space-y-6 lg:space-y-10">
-              <Heading3 heading={data.title} />
-              <p className="text-sm font-Urbanist leading-5 text-white lg:text-xl">
+              <Heading3 heading={data.title} className="" />
+              <p className="font-Urbanist text-sm leading-5 text-white lg:text-xl">
                 {data.description}
               </p>
             </div>

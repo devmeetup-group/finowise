@@ -3,9 +3,9 @@ import { Button } from '../ui/button';
 import { cn } from '@/lib/utils';
 
 const Subscription = ({
-  inputClassName,
-  btnContainerClassName,
-  className,
+  inputClassName = '',
+  btnContainerClassName = '',
+  className = '',
 }: SubscriptionProps) => {
   // TODO: CREATE LOGIC FOR SUBSCRIPTION
   return (

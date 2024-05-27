@@ -2,7 +2,7 @@ import { Heading3Props } from '@/types/landing_and_heading_types';
 import { cn } from '@/lib/utils';
 
 const Heading3 = ({
-  className,
+  className = '',
   heading,
   variant = 'default',
 }: Heading3Props) => {
