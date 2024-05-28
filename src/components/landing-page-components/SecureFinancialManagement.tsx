@@ -12,10 +12,7 @@ const SecureFinancialManagement = () => {
           heading="Secure Financial Management"
           className="text-center"
         />
-        <Heading2Description
-          text="Keep your finances safe with Finowise"
-          className=""
-        />
+        <Heading2Description text="Keep your finances safe with Finowise" />
       </div>
       {/* --------CONTENT BOX-------- */}
       <div className="mx-auto flex w-full max-w-[358px] flex-col space-y-16 rounded-3xl bg-fino-green-100 px-8 py-10 md:max-w-[500px] lg:max-w-full lg:flex-row lg:items-center lg:justify-between lg:px-[60px]">
