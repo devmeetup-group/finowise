@@ -1,22 +1,22 @@
 export type SubscriptionProps = {
-  inputClassName?: string;
-  btnContainerClassName?: string;
-  className?: string;
+  inputClassName?: string | undefined;
+  btnContainerClassName?: string | undefined;
+  className?: string  | undefined;
 };
 
 export type Heading3Props = {
-  className?: string;
+  className?: string | undefined;
   heading: string;
   variant?: 'small' | 'default';
 };
 
 export type Heading2DescriptionProps = {
-  className?: string;
+  className?: string  | undefined;
   text: string;
 };
 
 export type Heading2Props = {
-  className?: string;
+  className?: string | undefined;
   heading: string;
 };
 
