@@ -5,7 +5,7 @@ const Heading2 = ({ className = '', children }: ElementProps) => {
   return (
     <h2
       className={cn(
-        `leading-40 text-left font-Urbanist text-2xl font-medium text-black lg:text-4xl lg:leading-[60px] xl:text-5xl`,
+        `leading-40 text-left font-Urbanist text-4xl font-medium text-black lg:text-4xl lg:leading-[60px] xl:text-5xl`,
         className,
       )}
     >

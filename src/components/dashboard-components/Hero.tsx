@@ -25,7 +25,7 @@ function Hero() {
         </section>
         <div>
           <div className="flex items-center justify-center  md:block">
-            <img src={dashboardImg} alt="" />
+            <img src={dashboardImg} alt="" className="w-4/5" />
           </div>
         </div>
       </LayoutGrid2>

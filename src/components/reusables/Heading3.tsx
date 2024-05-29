@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 
 const Heading3 = ({
   className = '',
- children,
+  children,
   variant = 'default',
 }: Heading3Props) => {
   const variantStyles =
@@ -13,7 +13,7 @@ const Heading3 = ({
   return (
     <h3
       className={cn(
-        'font-Urbanist text-sm font-semibold text-white lg:text-3xl',
+        'font-Urbanist text-xl font-semibold text-white lg:text-3xl',
         variantStyles,
         className,
       )}
