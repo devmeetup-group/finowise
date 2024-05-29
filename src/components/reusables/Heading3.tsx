@@ -2,8 +2,8 @@ import { Heading3Props } from '@/types/landing_and_heading_types';
 import { cn } from '@/lib/utils';
 
 const Heading3 = ({
-  className,
-  heading,
+  className = '',
+  children,
   variant = 'default',
 }: Heading3Props) => {
   const variantStyles =
@@ -13,12 +13,12 @@ const Heading3 = ({
   return (
     <h3
       className={cn(
-        'font-Urbanist text-sm font-semibold text-white lg:text-3xl',
+        'font-Urbanist text-xl font-semibold text-white lg:text-3xl',
         variantStyles,
         className,
       )}
     >
-      {heading}
+      {children}
     </h3>
   );
 };

@@ -19,7 +19,7 @@ const defaultnavItems = [
     children: [
       {
         title: 'Dashboard',
-        link: '/',
+        link: '/dashboard',
         icon: dashboardIcon,
         iconBgColor: 'bg-fino-blue-70',
       },

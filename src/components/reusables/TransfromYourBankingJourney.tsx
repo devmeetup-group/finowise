@@ -62,20 +62,16 @@ const TransfromYourBankingJourney = () => {
   return (
     <section className="flex flex-col space-y-8 px-6 md:px-12 lg:px-[120px]">
       <div className="mb-6 flex flex-col space-y-2 lg:mb-12 lg:space-y-4">
-        <Heading2
-          heading="Transform your banking journey"
-          className="text-center"
-        />
+        <Heading2 className="text-center">
+          Transform your banking journey
+        </Heading2>
 
         <Heading2Description text="We design our services with simplicity in mind, ensuring that users can navigate and utilize our platform with ease" />
       </div>
       {/* ---------CAROUSEL---------- */}
       <div className="flex flex-col space-y-6 lg:flex-row lg:space-x-6 lg:space-y-0">
-        <div className="mx-auto flex w-full max-w-[358px] flex-col space-y-6 rounded-[24px] bg-gradient-to-b from-fino-green-80 via-fino-green-80/20 via-fino-green-80/20 to-white px-1 pt-6 lg:w-1/2 lg:max-w-[589px] lg:justify-between">
-          <Heading3
-            heading={`"${testimonials[count - 1].message}"`}
-            className="pl-[calc(25%+24px)] pr-6 text-2xl text-black lg:mt-12 lg:text-3xl lg:italic lg:leading-[38px] xl:text-3xl"
-          />
+        <div className="mx-auto flex w-full max-w-[358px] flex-col space-y-6 rounded-[24px] bg-gradient-to-b from-fino-green-80  via-fino-green-80/20 to-white px-1 pt-6 lg:w-1/2 lg:max-w-[589px] lg:justify-between">
+          <Heading3 className="pl-[calc(25%+24px)] pr-6 text-2xl text-black lg:mt-12 lg:text-3xl lg:italic lg:leading-[38px] xl:text-3xl">{`"${testimonials[count - 1].message}"`}</Heading3>
           <div className="flex items-center space-x-6">
             <div className="w-1/4">
               <img
@@ -95,11 +91,8 @@ const TransfromYourBankingJourney = () => {
           </div>
         </div>
 
-        <div className="mx-auto flex w-full max-w-[358px] flex-col space-y-6 rounded-[24px] bg-gradient-to-b from-fino-green-80 via-fino-green-80/20 via-fino-green-80/20 to-white px-1 pt-6 lg:w-1/2 lg:max-w-[589px] lg:justify-between">
-          <Heading3
-            heading={`"${testimonials[count].message}"`}
-            className="pl-[calc(25%+24px)] pr-6 text-2xl text-black lg:mt-12 lg:text-3xl lg:italic lg:leading-[38px] xl:text-3xl"
-          />
+        <div className="mx-auto flex w-full max-w-[358px] flex-col space-y-6 rounded-[24px] bg-gradient-to-b from-fino-green-80  via-fino-green-80/20 to-white px-1 pt-6 lg:w-1/2 lg:max-w-[589px] lg:justify-between">
+          <Heading3 className="pl-[calc(25%+24px)] pr-6 text-2xl text-black lg:mt-12 lg:text-3xl lg:italic lg:leading-[38px] xl:text-3xl">{`"${testimonials[count].message}"`}</Heading3>
           <div className="flex items-center space-x-6">
             <div className="w-1/4">
               <img src={testimonials[count].image} alt="" className="w-full" />

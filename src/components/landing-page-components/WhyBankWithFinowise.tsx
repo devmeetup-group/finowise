@@ -26,7 +26,7 @@ const WhyBankWithFinowise = () => {
   return (
     <div className="">
       <div className="mb-6 flex flex-col space-y-2 lg:mb-12 lg:space-y-4">
-        <Heading2 heading="Why bank with Finowise?" className="text-center" />
+        <Heading2 className="text-center">Why bank with Finowise?</Heading2>
         <Heading2Description text="Services that makes us stand out" />
       </div>
       <div className="flex flex-col justify-center space-y-6 md:mx-auto md:max-w-[700px] md:flex-row md:flex-wrap md:space-y-0 md:pt-0 lg:max-w-none lg:flex-row lg:flex-nowrap lg:space-x-6 lg:space-y-0">
@@ -43,7 +43,7 @@ const WhyBankWithFinowise = () => {
             <div
               className={`flex aspect-[1.123/1] w-full flex-col justify-center space-y-3 rounded-3xl p-6 ${data.bGColor}`}
             >
-              <Heading3 heading={data.title} variant="small" />
+              <Heading3 variant="small"> {data.title}</Heading3>
               {/* ---------- BOTTOM BAR ---------- */}
               <p className="font-Urbanist text-xs leading-4 text-white lg:text-xl">
                 {data.content}
