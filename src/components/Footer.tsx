@@ -12,10 +12,10 @@ const Footer = () => {
     <footer>
       <div className="grid grid-cols-2 bg-fino-green-90 px-4 py-6 text-white md:px-[7.5rem] md:py-10">
         <div>
-          <p className="mb-6 font-Urbanist text-[2rem] font-semibold md:mb-12">
+          <p className="mb-6 font-Urbanist text-2xl font-semibold md:mb-12 md:text-[2rem]">
             {title}
           </p>
-          <ul className="space-y-6 *:font-Urbanist *:text-xl *:capitalize md:space-y-12">
+          <ul className="space-y-6 text-sm *:font-Urbanist *:capitalize md:space-y-12 *:md:text-xl">
             {children.map((item) => {
               return (
                 <li key={item.title}>
@@ -26,17 +26,17 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <p className="mb-6 font-Urbanist text-[2rem] font-semibold capitalize md:mb-12">
+          <p className="mb-6 font-Urbanist text-2xl font-semibold capitalize md:mb-12 md:text-[2rem]">
             contact us{' '}
           </p>
 
-          <div className="space-y-6 *:font-Urbanist *:text-xl *:capitalize md:space-y-12">
+          <div className="space-y-6 text-sm *:font-Urbanist *:capitalize md:space-y-12 *:md:text-xl">
             <p>
               <span className="font-medium">contact :</span>{' '}
               <span>+012345678</span>
             </p>
             <p>
-              <span className="font-medium">email :</span>{' '}
+              <span className="font-medium ">email :</span>{' '}
               <span>support@finowise.com</span>
             </p>
           </div>
@@ -44,7 +44,7 @@ const Footer = () => {
       </div>
       <div className="grid grid-cols-2 px-4  py-8 text-white md:px-[7.5rem] ">
         <Logo />
-        <ul className="flex items-center gap-4 *:*:w-8 *:cursor-pointer ">
+        <ul className="flex flex-wrap items-center gap-4 *:*:w-8 *:cursor-pointer">
           <li>
             <img src={facebook} alt="" width={24} height={24} />
           </li>
