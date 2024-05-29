@@ -1,7 +1,7 @@
-import { Heading2Props } from '@/types/landing_and_heading_types';
+import { ElementProps } from '@/types/landing_and_heading_types';
 import { cn } from '@/lib/utils';
 
-const Heading2 = ({ className = '', heading }: Heading2Props) => {
+const Heading2 = ({ className = '', children }: ElementProps) => {
   return (
     <h2
       className={cn(
@@ -9,7 +9,7 @@ const Heading2 = ({ className = '', heading }: Heading2Props) => {
         className,
       )}
     >
-      {heading}
+      {children}
     </h2>
   );
 };

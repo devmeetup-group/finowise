@@ -30,10 +30,9 @@ const accountSetupSteps = [
 const LetsHelpSetUpYourAccount = () => {
   return (
     <section className="relative px-6 md:px-12 lg:space-x-6 lg:space-y-0 xl:px-[120px]">
-      <Heading2
-        className="mb-6 text-center lg:mb-12"
-        heading="Let's set up your account"
-      />
+      <Heading2 className="mb-6 text-center lg:mb-12">
+        Let's set up your account
+      </Heading2>
       <div className="flex flex-col space-y-6 lg:flex-row lg:items-center lg:justify-between">
         {/* ------- IMAGE -------- */}
         <LetsHelpYouSetUpYourAccountImage />
@@ -47,7 +46,7 @@ const LetsHelpSetUpYourAccount = () => {
                 </p>
               </div>
               <div className="flex w-4/5 flex-col space-y-2">
-                <Heading3 heading={step.title} className="text-black" />
+                <Heading3 className="text-black">{step.title}</Heading3>
                 <p className="font-Urbanist text-sm lg:text-xl">
                   {step.action}
                 </p>

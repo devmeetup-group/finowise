@@ -13,7 +13,7 @@ const LandingHero = () => {
           <Subscription />
           <Clients />
         </div>
-        <div className="relative mr-6 flex hidden aspect-[1/1] lg:block lg:w-1/2 xl:mr-[120px]">
+        <div className="relative mr-6 flex  aspect-[1/1] lg:block lg:w-1/2 xl:mr-[120px]">
           <HeroImage />
         </div>
       </div>

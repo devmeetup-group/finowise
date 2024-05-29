@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 
 const Heading3 = ({
   className = '',
-  heading,
+ children,
   variant = 'default',
 }: Heading3Props) => {
   const variantStyles =
@@ -18,7 +18,7 @@ const Heading3 = ({
         className,
       )}
     >
-      {heading}
+      {children}
     </h3>
   );
 };

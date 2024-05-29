@@ -42,10 +42,9 @@ const EndlessQualityFeatures = () => {
   return (
     <section className="flex flex-col space-y-6 px-6 md:px-12 xl:px-[120px]">
       <div className="mb-6 flex flex-col space-y-2 lg:mb-12 lg:space-y-4">
-        <Heading2
-          heading="Endless quality features Finowise offers"
-          className="text-center"
-        />
+        <Heading2 className="text-center">
+          Endless quality features Finowise offers
+        </Heading2>
         <Heading2Description text="Finowise offers seamless, smooth transactions and financial security" />
       </div>
       <div className="flex flex-col space-y-4 lg:grid lg:grid-cols-2 lg:flex-row lg:gap-6 lg:space-y-0">
@@ -66,7 +65,7 @@ const EndlessQualityFeatures = () => {
             </div>
 
             <div className="flex flex-col space-y-6 lg:space-y-10">
-              <Heading3 heading={data.title} />
+              <Heading3> {data.title}</Heading3>
               <p className="font-Urbanist text-sm leading-5 text-white lg:text-xl">
                 {data.description}
               </p>
