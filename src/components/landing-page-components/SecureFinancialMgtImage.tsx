@@ -6,8 +6,8 @@ import secureLock from '../../assets/images/secure_financial_management/securelo
 
 const SecureFinancialMgtImage = () => {
   return (
-    <div className="mx-auto w-full max-w-[350px] lg:mr-0 lg:w-1/2 2xl:max-w-[448px]">
-      <div className="relative grid aspect-square w-full rotate-12 place-content-center rounded-full border border-dashed">
+    <div className="mx-auto w-full max-w-[350px] 2xl:max-w-[408px]">
+      <div className="grid aspect-square w-full rotate-12 rounded-full border border-dashed">
         <div className="absolute top-0 aspect-square w-[26.32%] rounded-full lg:w-[28.83%]">
           <img src={barChart} alt="" className="" />
         </div>

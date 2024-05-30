@@ -2,7 +2,7 @@ import laptop from '../../assets/images/animation_components/landing/MacBook Pro
 import circle from '../../assets/images/animation_components/landing/circle.png';
 const LetsHelpYouSetUpYourAccountImage = () => {
   return (
-    <div className="relative hidden aspect-square h-[400px] w-[500px] lg:block lg:w-[410px]">
+    <div className="relative hidden aspect-square h-[400px] w-[500px] lg:block">
       <img
         src={circle}
         alt=""

@@ -12,7 +12,7 @@ const Subscription = ({
     <div>
       <div
         className={cn(
-          'relative flex max-w-lg items-center justify-between md:w-2/3 lg:w-full',
+          'relative max-w-lg md:w-2/3 lg:w-full',
           className,
         )}
       >
@@ -20,13 +20,13 @@ const Subscription = ({
         <input
           type="text"
           className={cn(
-            'h-14 w-full rounded-2xl border border-gray-300 pl-2 text-base placeholder:text-base lg:placeholder:text-sm',
+            'h-16 w-full rounded-2xl border border-gray-300 pl-4 text-base placeholder:text-base lg:placeholder:text-sm lg:h-14',
             inputClassName,
           )}
           placeholder="johndoe@email.com|"
         />
-        <div className={cn('absolute right-0', btnContainerClassName)}>
-          <Button variant="default" size="default">
+        <div className={cn('absolute right-0 top-0', btnContainerClassName)}>
+          <Button variant="default" size='default'>
             Subscribe
           </Button>
         </div>

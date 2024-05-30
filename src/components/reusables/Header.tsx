@@ -29,7 +29,7 @@ const Header = () => {
     <motion.header
       className="fixed left-0 w-screen z-10 flex h-[106px] items-center justify-between bg-white p-6 md:px-12 lg:h-[154px] lg:py-10 xl:px-[120px]"
       initial={{ y: '-100%' }}
-      animate={{ y: isScrolledDown ? '-100%' : 0 }}
+      animate={{ y: isScrolledDown && !showNav ? '-100%' : 0 }}
       transition={{ duration: 0.5, stiffness: 200, dampness: 50 }}
     >
       {/*-------- LOGO -------- */}
@@ -57,7 +57,7 @@ const Header = () => {
             animate={showNav ? { opacity: 1 } : { opacity: 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className=" fixed left-0 top-0 h-screen w-screen bg-fino-green-100/25 backdrop-blur-sm"
+            className="fixed left-0 h-screen top-0 right-0 bg-fino-green-100/25 backdrop-blur-sm"
             onClick={() => setShowNav(false)}
           ></motion.div>
         )}

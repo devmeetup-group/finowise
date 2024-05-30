@@ -1,18 +1,15 @@
-import { Heading2DescriptionProps } from '@/types/landing_and_heading_types';
+import { ElementProps } from '@/types/landing_and_heading_types';
 import { cn } from '@/lib/utils';
 
-const Heading2Description = ({
-  className = '',
-  text,
-}: Heading2DescriptionProps) => {
+const Heading2Description = ({ className = '', children }: ElementProps) => {
   return (
     <p
       className={cn(
-        'text-center font-Urbanist text-base font-normal tracking-[0.1%] text-gray-400 md:text-xl xl:text-2xl',
+        'text-center font-Urbanist text-xl font-normal tracking-[0.1%] text-gray-400 md:text-2xl',
         className,
       )}
     >
-      {text}
+      {children}
     </p>
   );
 };
