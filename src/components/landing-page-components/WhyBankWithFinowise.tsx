@@ -1,6 +1,7 @@
-import Heading2 from '../reusables/Heading2';
-import Heading2Description from '../reusables/Heading2Description';
-import Heading3 from '../reusables/Heading3';
+import { LayoutGrid2 } from '../reusables';
+import Heading2 from '../reusables/text/Heading2';
+import Heading2Description from '../reusables/text/Heading2Description';
+import Heading3 from '../reusables/text/Heading3';
 const data = [
   {
     title: 'Simplified Budgeting',
@@ -31,16 +32,14 @@ const WhyBankWithFinowise = () => {
           Services that makes us stand out
         </Heading2Description>
       </div>
-      <div className="space-y-6 lg:flex lg:max-w-none lg:space-x-6 lg:space-y-0">
+      <LayoutGrid2 className="gap-6 lg:grid-cols-3">
         {data.map((data) => (
           <div
             className="mx-auto w-full max-w-[292px] space-y-4 lg:mx-0 lg:max-w-[400px]"
             key={data.title}
           >
             {/* ---------- TOP BAR ---------- */}
-            <div
-              className={`h-2.5 w-full rounded-full md:mt-8 ${data.bGColor}`}
-            ></div>
+            <div className={`h-2.5 w-full rounded-full ${data.bGColor}`}></div>
             {/* ---------- BOX ---------- */}
             <div
               className={`flex aspect-[1.123/1] w-full flex-col space-y-3 rounded-3xl p-6 pt-[25%] ${data.bGColor}`}
@@ -54,7 +53,7 @@ const WhyBankWithFinowise = () => {
             <div className={`h-2.5 w-full rounded-full ${data.bGColor}`}></div>
           </div>
         ))}
-      </div>
+      </LayoutGrid2>
     </section>
   );
 };

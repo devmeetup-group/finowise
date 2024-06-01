@@ -1,8 +1,9 @@
-import Heading2Description from '../reusables/Heading2Description';
-import Heading2 from '../reusables/Heading2';
-import Heading3 from '../reusables/Heading3';
+import Heading2Description from '../reusables/text/Heading2Description';
+import Heading2 from '../reusables/text/Heading2';
+import Heading3 from '../reusables/text/Heading3';
 import SecureFinancialMgtImage from './SecureFinancialMgtImage';
 import { LayoutGrid2 } from '../reusables';
+import Paragraph from '../reusables/text/Paragraph';
 
 const SecureFinancialManagement = () => {
   return (
@@ -15,21 +16,21 @@ const SecureFinancialManagement = () => {
         </Heading2Description>
       </div>
       {/* --------CONTENT BOX-------- */}
-      <LayoutGrid2 className="mx-auto w-full max-w-[358px] space-y-16 rounded-3xl bg-fino-green-100 px-8 py-12 md:max-w-[500px] lg:max-w-full lg:space-y-0 lg:py-16 lg:px-[60px]">
+      <LayoutGrid2 className="mx-auto w-full max-w-[358px] space-y-16 rounded-3xl bg-fino-green-100 px-8 py-12 md:max-w-[500px] lg:max-w-full lg:space-y-0 lg:px-[60px] lg:py-16">
         {/* --------TEXT-------- */}
         <div className="justify-center space-y-6 lg:flex lg:max-w-[512px] lg:flex-col">
           <Heading3 variant="default">
             Safeguarding users financial data
           </Heading3>
-          <p className="font-Urbanist text-base leading-4 text-white md:text-xl lg:leading-9 xl:pb-4 xl:text-2xl">
+          <Paragraph className="text-white xl:pb-4">
             The platform prioritises the safeguarding of users' financial
             information through encryption, multi-factor authentication, and
             secure servers.
-          </p>
-          <p className="font-Urbanist text-base leading-4 text-white md:text-xl lg:leading-9 xl:text-2xl">
+          </Paragraph>
+          <Paragraph className="text-white">
             Users can confidently manage their finances, knowing their sensitive
             data is secure and shielded from unauthorized access.
-          </p>
+          </Paragraph>
         </div>
         {/* --------IMAGE-------- */}
         <SecureFinancialMgtImage />

@@ -2,11 +2,12 @@ import clock from '../../assets/images/endless_quality_features/clock.svg';
 import bill from '../../assets/images/endless_quality_features/bill.svg';
 import support from '../../assets/images/endless_quality_features/support.svg';
 import mobile from '../../assets/images/endless_quality_features/mobile.svg';
-import Heading2 from '../reusables/Heading2';
-import Heading2Description from '../reusables/Heading2Description';
-import Heading3 from '../reusables/Heading3';
+import Heading2 from '../reusables/text/Heading2';
+import Heading2Description from '../reusables/text/Heading2Description';
+import Heading3 from '../reusables/text/Heading3';
 import { cn } from '@/lib/utils';
 import { LayoutGrid2 } from '../reusables';
+import Paragraph from '../reusables/text/Paragraph';
 
 const data = [
   {
@@ -50,10 +51,10 @@ const EndlessQualityFeatures = () => {
           Finowise offers seamless, smooth transactions and financial security
         </Heading2Description>
       </div>
-      <LayoutGrid2 className="lg:gap-6">
+      <LayoutGrid2 className="items-stretch gap-6 md:grid-cols-2">
         {data.map((data) => (
           <div
-            className={`${data.bgColor} mx-auto aspect-square w-full max-w-[358px] space-y-4 rounded-[24px] p-6 lg:max-w-[589px] lg:space-y-10 xl:aspect-[3/2.5]`}
+            className={`${data.bgColor} mx-auto aspect-square space-y-4 rounded-[24px] p-6 md:aspect-auto lg:aspect-[1/1] lg:max-w-[589px] lg:space-y-10 `}
             key={data.title}
           >
             <div className="grid aspect-square w-11 place-content-center rounded-lg bg-white lg:w-[20%]">
@@ -69,9 +70,7 @@ const EndlessQualityFeatures = () => {
 
             <div className="space-y-6 lg:space-y-10">
               <Heading3> {data.title}</Heading3>
-              <p className="font-Urbanist text-base leading-5 text-white md:text-xl xl:text-2xl">
-                {data.description}
-              </p>
+              <Paragraph className="text-white">{data.description}</Paragraph>
             </div>
           </div>
         ))}

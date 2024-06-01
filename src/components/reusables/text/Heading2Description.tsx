@@ -5,7 +5,7 @@ const Heading2Description = ({ className = '', children }: ElementProps) => {
   return (
     <p
       className={cn(
-        'text-center font-Urbanist text-xl font-normal tracking-[0.1%] text-gray-400 md:text-2xl',
+        'mx-auto max-w-3xl text-center font-Urbanist text-xl font-normal tracking-[0.1%] text-gray-400 md:text-2xl',
         className,
       )}
     >

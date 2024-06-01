@@ -1,5 +1,6 @@
 import './api/api';
 import MainLayout from './layouts/MainLayout';
+import AboutPage from './pages/AboutPage';
 import DashboardPage from './pages/DashboardPage';
 import Landing from './pages/Landing';
 
@@ -12,6 +13,7 @@ const router = createBrowserRouter([
     children: [
       { path: '/', element: <Landing /> },
       { path: '/dashboard', element: <DashboardPage /> },
+      { path: '/about', element: <AboutPage /> },
     ],
   },
 ]);

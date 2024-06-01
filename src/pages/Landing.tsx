@@ -9,12 +9,12 @@ import WhyBankWithFinowise from '@/components/landing-page-components/WhyBankWit
 
 const Landing = () => {
   return (
-    <main className="px-4 py-6 md:px-12 xl:px-[7.5rem]">
+    <main className="overflow-hidden px-4 py-6 md:px-12 xl:px-[7.5rem]">
       <LandingHero />
       <WhyBankWithFinowise />
       <SecureFinancialManagement />
       <EndlessQualityFeatures />
-      <TransfromYourBankingJourney />
+      <TransfromYourBankingJourney variant='home'/>
       <LetsHelpSetUpYourAccount />
       <GetStartedWithFinowise />
       <SubscribeToOurNewsletter />

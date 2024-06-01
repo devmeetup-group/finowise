@@ -2,15 +2,15 @@ import laptop from '../../assets/images/animation_components/landing/MacBook Pro
 import circle from '../../assets/images/animation_components/landing/circle.png';
 const LetsHelpYouSetUpYourAccountImage = () => {
   return (
-    <div className="relative hidden aspect-square h-[400px] w-[500px] lg:block">
+    <div className="relative hidden aspect-square h-[400px] w-3.5/5 lg:block">
       <img
         src={circle}
-        alt=""
+        alt='Laptop mockup of Finowise dashboard'
         className="absolute top-1/2 w-[490px] -translate-y-1/2"
       />
       <img
         src={laptop}
-        alt=""
+        alt="Laptop mockup of Finowise dashboard"
         className="absolute left-[49%] top-1/2 w-[500px] -translate-x-1/2 -translate-y-1/2"
       />
     </div>

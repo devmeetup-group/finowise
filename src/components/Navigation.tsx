@@ -56,7 +56,7 @@ const defaultnavItems = [
     children: [
       {
         title: 'About Finowise',
-        link: '/',
+        link: '/about',
         icon: aboutIcon,
         iconBgColor: 'bg-fino-blue-green',
       },
@@ -75,13 +75,13 @@ const Navigation = ({ setShowNav }: NavProps) => {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
 
   const mobileChildrenVariants = {
-    open: { height: 'fit-content' },
-    close: { height: 0 },
+    open: { height: 'fit-content', transition: { duration: 0.6 } },
+    close: { height: 0, transition: { duration: 0.6 } },
   };
 
   const desktopChildrenVariants = {
     open: { opacity: 1 },
-    close: { opacity: 0 },
+    close: { opacity: 0, transition: { duration: 0.2 } },
   };
 
   const handleNavItemActive = (title: string) => {
@@ -92,7 +92,6 @@ const Navigation = ({ setShowNav }: NavProps) => {
         return { ...navItem, isOpen: false };
       }
     });
-    console.log(newNavItemsArray);
     setNavItems(newNavItemsArray);
   };
   // ----- FOR DESKTOP HOVER --------------------------------
@@ -106,7 +105,7 @@ const Navigation = ({ setShowNav }: NavProps) => {
   // ----- FOR DESKTOP HOVER --------------------------------
 
   return (
-    <div className="absolute left-1/2 top-28 w-[calc(100vw-48px)] -translate-x-1/2 rounded-2xl bg-white py-10 font-Urbanist text-base font-semibold lg:relative lg:left-0 lg:top-0 lg:w-fit lg:-translate-x-0 lg:rounded-none lg:py-0">
+    <div className="absolute left-1/2 w-full max-w-[calc(100vw-48px)] -translate-x-1/2 rounded-2xl bg-white py-10 md:w-[calc(100vw-96px)] lg:relative lg:left-0 lg:top-0 lg:w-fit lg:-translate-x-0 lg:rounded-none lg:py-0">
       {/*------------- NAV LIST -------------*/}
       <div className="lg:flex">
         {navItems.map((item) => (
@@ -123,7 +122,9 @@ const Navigation = ({ setShowNav }: NavProps) => {
               onClick={() => handleNavItemActive(item.title)}
             >
               {/*--------------- NAV TRIGGER TEXT --------------- */}
-              <p className="">{item.title}</p>
+              <p className="font-Urbanist text-base font-semibold">
+                {item.title}
+              </p>
               {/* -------- NAV TRIGGER ICON --------*/}
               <motion.div
                 className="w-fit"
@@ -150,11 +151,12 @@ const Navigation = ({ setShowNav }: NavProps) => {
                   initial="close"
                   animate={`${item.isOpen && 'open'}`}
                   exit="close"
-                  transition={{ duration: 0.6 }}
+                  // transition={{ duration: 0.6 }}
                 >
                   <div className={`pt-4 lg:rounded lg:p-2`}>
                     {item.children?.map((child) => (
-                      <div
+                      <Link
+                        to={child.link}
                         className="flex items-center space-x-3 rounded-md p-2 lg:hover:bg-gray-200"
                         key={child.title}
                         // ----- CLOSE NAV WHEN CHILD IS CLICKED --------
@@ -165,14 +167,14 @@ const Navigation = ({ setShowNav }: NavProps) => {
                         >
                           <img
                             src={child.icon}
-                            alt=""
+                            alt={`${child.title} icon`}
                             className={`${child.icon === mobileIcon ? 'w-2.5' : 'w-4'}`}
                           />
                         </div>
-                        <Link to={child.link} className="text-nowrap">
+                        <p className="text-nowrap font-Urbanist text-base font-semibold">
                           {child.title}
-                        </Link>
-                      </div>
+                        </p>
+                      </Link>
                     ))}
                   </div>
                 </motion.div>
@@ -183,10 +185,10 @@ const Navigation = ({ setShowNav }: NavProps) => {
       </div>
       {/* CALL TO ACTIONS */}
       <div className="mt-14 flex space-x-6 px-6 lg:hidden">
-        <Button variant="outline" size="default">
+        <Button variant="outline" className="min-w-20 whitespace-nowrap">
           <Link to="/">Log in</Link>
         </Button>
-        <Button variant="default" size="default">
+        <Button variant="default">
           <Link to="/">Create account</Link>
         </Button>
       </div>

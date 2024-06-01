@@ -12,7 +12,7 @@ const Subscription = ({
     <div>
       <div
         className={cn(
-          'relative max-w-lg md:w-2/3 lg:w-full',
+          'relative w-full',
           className,
         )}
       >
