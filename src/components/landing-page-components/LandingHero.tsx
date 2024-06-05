@@ -3,20 +3,23 @@ import Clients from './Clients';
 import HeroImage from './HeroImage';
 import HeroText from './HeroText';
 import Partners from './Partners';
+import { LayoutGrid2 } from '../reusables';
 
 const LandingHero = () => {
   return (
-    <section className="lg:pb-0">
-      <div className="items-center justify-between lg:flex">
-        <div className="flex flex-col space-y-12 px-6 md:pl-12 lg:w-1/2 lg:space-y-16 lg:pr-0 xl:space-y-24  xl:pl-[120px]">
+    <section className="my-10 py-10 md:my-24 ">
+      <LayoutGrid2 className="items-center md:grid-cols-[58%_42%] md:gap-2 lg:gap-6">
+        <div className="space-y-6 pt-2 lg:space-y-12">
           <HeroText />
-          <Subscription />
+          <Subscription className="md:w-full lg:w-4/5" />
           <Clients />
         </div>
-        <div className="relative mr-6 flex  aspect-[1/1] lg:block lg:w-1/2 xl:mr-[120px]">
+
+        <div className="relative aspect-square md:block md:w-full">
           <HeroImage />
         </div>
-      </div>
+      </LayoutGrid2>
+
       <Partners />
     </section>
   );

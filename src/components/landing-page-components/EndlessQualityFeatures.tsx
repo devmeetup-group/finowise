@@ -2,10 +2,12 @@ import clock from '../../assets/images/endless_quality_features/clock.svg';
 import bill from '../../assets/images/endless_quality_features/bill.svg';
 import support from '../../assets/images/endless_quality_features/support.svg';
 import mobile from '../../assets/images/endless_quality_features/mobile.svg';
-import Heading2 from '../reusables/Heading2';
-import Heading2Description from '../reusables/Heading2Description';
-import Heading3 from '../reusables/Heading3';
+import Heading2 from '../reusables/text/Heading2';
+import Heading2Description from '../reusables/text/Heading2Description';
+import Heading3 from '../reusables/text/Heading3';
 import { cn } from '@/lib/utils';
+import { LayoutGrid2 } from '../reusables';
+import Paragraph from '../reusables/text/Paragraph';
 
 const data = [
   {
@@ -40,17 +42,19 @@ const data = [
 
 const EndlessQualityFeatures = () => {
   return (
-    <section className="flex flex-col space-y-6 px-6 md:px-12 xl:px-[120px]">
-      <div className="mb-6 flex flex-col space-y-2 lg:mb-12 lg:space-y-4">
+    <section className="space-y-6 py-14">
+      <div className="mb-6 space-y-2 lg:mb-12 lg:space-y-4">
         <Heading2 className="text-center">
           Endless quality features Finowise offers
         </Heading2>
-        <Heading2Description text="Finowise offers seamless, smooth transactions and financial security" />
+        <Heading2Description>
+          Finowise offers seamless, smooth transactions and financial security
+        </Heading2Description>
       </div>
-      <div className="flex flex-col space-y-4 lg:grid lg:grid-cols-2 lg:flex-row lg:gap-6 lg:space-y-0">
+      <LayoutGrid2 className="items-stretch gap-6 md:grid-cols-2">
         {data.map((data) => (
           <div
-            className={`${data.bgColor} mx-auto flex aspect-square w-full max-w-[358px] flex-col space-y-4 rounded-[24px] p-6 lg:max-w-[589px] lg:space-y-10 xl:aspect-[3/2.5]`}
+            className={`${data.bgColor} mx-auto aspect-square space-y-4 rounded-[24px] p-6 md:aspect-auto lg:aspect-[1/1] lg:max-w-[589px] lg:space-y-10 `}
             key={data.title}
           >
             <div className="grid aspect-square w-11 place-content-center rounded-lg bg-white lg:w-[20%]">
@@ -64,15 +68,13 @@ const EndlessQualityFeatures = () => {
               />
             </div>
 
-            <div className="flex flex-col space-y-6 lg:space-y-10">
+            <div className="space-y-6 lg:space-y-10">
               <Heading3> {data.title}</Heading3>
-              <p className="font-Urbanist text-sm leading-5 text-white lg:text-xl">
-                {data.description}
-              </p>
+              <Paragraph className="text-white">{data.description}</Paragraph>
             </div>
           </div>
         ))}
-      </div>
+      </LayoutGrid2>
     </section>
   );
 };

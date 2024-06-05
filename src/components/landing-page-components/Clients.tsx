@@ -15,12 +15,12 @@ const Clients = () => {
       <div className="justify-right flex h-16 w-[184px] -space-x-4">
         {clients.reverse().map((client, index) => (
           <div key={index} className={`absolute ${client.translate}`}>
-            <img src={client.img} alt="client" className="w-16" />
+            <img src={client.img} alt='client' className="w-16" />
           </div>
         ))}
       </div>
       <div className="-space-y-1/2 flex w-fit flex-col justify-center lg:-space-y-2">
-        <p className="font-Urbanist text-sm font-bold lg:text-3xl">Over 1k+</p>
+        <p className="font-Urbanist text-sm font-bold lg:text-2xl">Over 1k+</p>
         <p className="font-Urbanist text-xs text-black/50 lg:text-lg">
           Active users
         </p>

@@ -7,13 +7,11 @@ const Heading3 = ({
   variant = 'default',
 }: Heading3Props) => {
   const variantStyles =
-    variant === 'default'
-      ? 'md:text-xl lg:text-3xl lg:leading-[60px] lg:font-normal xl:text-4xl'
-      : '';
+    variant === 'default' ? 'text-2xl lg:text-4xl xl:text-4xl lg:font-normal ' : '';
   return (
     <h3
       className={cn(
-        'font-Urbanist text-xl font-semibold text-white lg:text-3xl',
+        'font-Urbanist text-xl font-semibold text-white lg:text-2xl xl:text-3xl',
         variantStyles,
         className,
       )}

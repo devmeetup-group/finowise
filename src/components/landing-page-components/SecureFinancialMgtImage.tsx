@@ -6,25 +6,25 @@ import secureLock from '../../assets/images/secure_financial_management/securelo
 
 const SecureFinancialMgtImage = () => {
   return (
-    <div className="mx-auto w-full max-w-[350px] lg:mr-0 lg:w-1/2 2xl:max-w-[448px]">
-      <div className="relative grid aspect-square w-full rotate-12 place-content-center rounded-full border border-dashed">
+    <div className="mx-auto w-full max-w-[350px] 2xl:max-w-[408px]">
+      <div className="grid aspect-square w-full rotate-12 rounded-full border border-dashed">
         <div className="absolute top-0 aspect-square w-[26.32%] rounded-full lg:w-[28.83%]">
-          <img src={barChart} alt="" className="" />
+          <img src={barChart} alt="bar chart" />
         </div>
         <div className="absolute right-0 aspect-square w-[26.32%] rounded-full lg:w-[28.83%]">
-          <img src={creditCard} alt="" className="" />
+          <img src={creditCard} alt="credit cart" />
         </div>
         <div className="absolute bottom-0 aspect-square w-[26.32%] rounded-full lg:w-[28.83%]">
-          <img src={fingerPrint} alt="" className="" />
+          <img src={fingerPrint} alt="finger print" />
         </div>
         <div className="w- absolute bottom-0 right-0 aspect-square w-[26.32%] rounded-full lg:w-[28.83%]">
-          <img src={fileFolder} alt="" className="" />
+          <img src={fileFolder} alt="file folder" />
         </div>
 
         <div className="absolute left-1/2 top-1/2 aspect-square  w-[58.60%] -translate-x-1/2 -translate-y-1/2 -rotate-12 rounded-full bg-fino-green-80/10 lg:w-full lg:bg-transparent">
           <img
             src={secureLock}
-            alt=""
+            alt="secure lock"
             className="absolute left-1/2 top-1/2 aspect-square  w-[56.29%] -translate-x-1/2 -translate-y-1/2 lg:w-[32.93%]"
           />
         </div>

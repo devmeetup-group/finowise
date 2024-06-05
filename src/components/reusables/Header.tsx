@@ -5,7 +5,12 @@ import Logo from '../Logo';
 import Navigation from '../Navigation';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AnimatePresence, motion, useScroll, useMotionValueEvent } from 'framer-motion';
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useMotionValueEvent,
+} from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
 
 const Header = () => {
@@ -14,22 +19,20 @@ const Header = () => {
   const { scrollY } = useScroll();
   const [isScrolledDown, setIsScrolledDown] = useState(false);
 
- useMotionValueEvent(scrollY, 'change', (latest) => {
-  const previous = scrollY.getPrevious()
-  if(previous && latest > previous) { 
-    setIsScrolledDown(true)
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    const previous = scrollY.getPrevious();
+    if (previous && latest > previous) {
+      setIsScrolledDown(true);
+    } else {
+      setIsScrolledDown(false);
     }
- else {
-  setIsScrolledDown(false)
- }
- })
-
+  });
 
   return (
     <motion.header
-      className="fixed left-0 w-screen z-10 flex h-[106px] items-center justify-between bg-white p-6 md:px-12 lg:h-[154px] lg:py-10 xl:px-[120px]"
+      className="fixed left-0 z-10 flex h-[106px] w-screen items-center justify-between bg-white p-6 md:px-12 lg:h-[154px] lg:py-10 xl:px-[120px]"
       initial={{ y: '-100%' }}
-      animate={{ y: isScrolledDown ? '-100%' : 0 }}
+      animate={{ y: isScrolledDown && !showNav ? '-100%' : 0 }}
       transition={{ duration: 0.5, stiffness: 200, dampness: 50 }}
     >
       {/*-------- LOGO -------- */}
@@ -57,7 +60,7 @@ const Header = () => {
             animate={showNav ? { opacity: 1 } : { opacity: 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className=" fixed left-0 top-0 h-screen w-screen bg-fino-green-100/25 backdrop-blur-sm"
+            className="fixed left-0 right-0 top-0 h-screen bg-fino-green-100/25 backdrop-blur-sm backdrop-grayscale-[0.5]"
             onClick={() => setShowNav(false)}
           ></motion.div>
         )}
